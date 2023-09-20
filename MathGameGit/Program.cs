@@ -46,10 +46,7 @@ H - Games history");
                     game = GameTypes.Division;
                     break;
                 case "H":
-                    foreach (var log in gamesLog)
-                    {
-                        Console.WriteLine(log);
-                    }
+                    ShowGameLogs();
                     break;
                     
             }
@@ -145,6 +142,18 @@ H - Games history");
             actualTime = DateTime.UtcNow;
             gamesLog.Add($"{actualTime} - Game played: {gameName} - score: {score}/{rounds}");
         }
+
+        void ShowGameLogs()
+        {
+            foreach (var log in gamesLog)
+            {
+                Console.WriteLine(log);
+            }
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadLine();
+
+        }
+
         void EndGame(int score, GameTypes game)
         {
             string gameName="";

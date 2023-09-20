@@ -1,0 +1,15 @@
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/bin/Debug/net7.0/MathGameGit
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/bin/Debug/net7.0/MathGameGit.deps.json
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/bin/Debug/net7.0/MathGameGit.runtimeconfig.json
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/bin/Debug/net7.0/MathGameGit.dll
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/bin/Debug/net7.0/MathGameGit.pdb
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.csproj.AssemblyReference.cache
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.GeneratedMSBuildEditorConfig.editorconfig
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.AssemblyInfoInputs.cache
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.AssemblyInfo.cs
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.csproj.CoreCompileInputs.cache
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.dll
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/refint/MathGameGit.dll
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.pdb
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/MathGameGit.genruntimeconfig.cache
+/Users/czerviik/Projects/MathGameGit/MathGameGit/MathGameGit/MathGameGit/obj/Debug/net7.0/ref/MathGameGit.dll

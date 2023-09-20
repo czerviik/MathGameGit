@@ -61,7 +61,8 @@ H - Games history");
 
             for (int i = 0; i < rounds; i++)
             {
-                var ranNoArray = GenerateRandomNumbers();
+                var ranNoArrayEmpty = new int[2];
+                var ranNoArray = GenerateRandomNumbers(ranNoArrayEmpty);
 
                 switch (game)
                 {
@@ -92,9 +93,8 @@ H - Games history");
         }
       
       
-        int[] GenerateRandomNumbers()
+        int[] GenerateRandomNumbers(int[]ranNoArray)
         {
-            var ranNoArray = new int[2];
             int number1 = random.Next(1, 100);
             int number2 = random.Next(1, 100);
             ranNoArray[0] = number1;
@@ -110,10 +110,11 @@ H - Games history");
         int DivisionSpecialCalc(int[] ranNoArray)
         {
             int result;
-            do
+
+            while (ranNoArray[0] % ranNoArray[1] != 0)
             {
-                ranNoArray = GenerateRandomNumbers();
-            } while (ranNoArray[0] % ranNoArray[1] != 0);
+                ranNoArray = GenerateRandomNumbers(ranNoArray);
+            }
 
             result = ranNoArray[0] / ranNoArray[1];
             return result;

@@ -1,14 +1,17 @@
-﻿namespace MathGameGit;
+﻿using System;
+using System.Collections.Generic;
+namespace MathGameGit;
 
 class Program
 {
     static void Main(string[] args)
     {
         var random = new Random();
-        string chosenGame;
         int score = 0;
-        GameTypes game;
         var gameContinue = true;
+        int rounds;
+        DateTime actualTime;
+        var gamesLog = new List<string>();
 
         while (gameContinue)
         {
@@ -17,7 +20,8 @@ class Program
 
         void Menu()
         {
-            
+            var game = new GameTypes();
+            string chosenGame;
 
             Console.WriteLine(@"Welcome to the math game! Select your game:
 A - Addition
@@ -27,37 +31,39 @@ D - Division
 H - Games history");
             chosenGame = Console.ReadLine();
 
-
-
             switch (chosenGame.ToUpper())
             {
                 case "A":
                     game = GameTypes.Addition;
-                    GameLogic(game);
                     break;
                 case "S":
                     game = GameTypes.Subtraction;
-                    GameLogic(game);
                     break;
                 case "M":
                     game = GameTypes.Multiplication;
-                    GameLogic(game);
                     break;
                 case "D":
                     game = GameTypes.Division;
-                    GameLogic(game);
                     break;
+                case "H":
+                    foreach (var log in gamesLog)
+                    {
+                        Console.WriteLine(log);
+                    }
+                    break;
+                    
             }
+
+            GameLogic(game);
         }
         
-
         void GameLogic(GameTypes game)
         {
             var oper = "";
             int result = 0;
 
             Console.WriteLine("How many rounds do you want?");
-            int rounds = int.Parse(Console.ReadLine());
+            rounds = int.Parse(Console.ReadLine());
 
             for (int i = 0; i < rounds; i++)
             {
@@ -134,7 +140,11 @@ H - Games history");
                 Console.WriteLine();
             } 
         }
-
+        void AddGameLogs(string gameName)
+        {
+            actualTime = DateTime.UtcNow;
+            gamesLog.Add($"{actualTime} - Game played: {gameName} - score: {score}/{rounds}");
+        }
         void EndGame(int score, GameTypes game)
         {
             string gameName="";
@@ -153,6 +163,9 @@ H - Games history");
                     gameName = "division game";
                     break;
             }
+
+            AddGameLogs(gameName);
+
             Console.WriteLine("Game over! Your score in {0} is {1}",gameName,score);
             Console.WriteLine("Play again? Y/N");
             string playAgain = Console.ReadLine();

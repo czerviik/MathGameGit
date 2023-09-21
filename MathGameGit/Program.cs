@@ -208,14 +208,14 @@ Q - Quit");
 
         }
     }
-    public enum GameTypes
-    {
-        Addition,
-        Subtraction,
-        Multiplication,
-        Division
-    }
+
     
 }
-
+public enum GameTypes
+{
+    Addition,
+    Subtraction,
+    Multiplication,
+    Division
+}
 

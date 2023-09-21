@@ -6,6 +6,7 @@ namespace MathGameGit
 		public GameTypes Game { get; private set; }
         public bool Repeat { get; private set; }
         public int Difficulty { get; private set; }
+        public int Rounds { get; private set; }
 
         public MainMenu()
 		{
@@ -62,6 +63,7 @@ Q - Quit");
         }
         public void ChooseDifficulty()
         {
+            Console.Clear();
             Console.WriteLine(@"Choose a difficulty:
 1 - easy
 2 - medium
@@ -69,6 +71,12 @@ Q - Quit");
             Difficulty = int.Parse(Console.ReadLine());
         }
 
+        public void ChooseRounds()
+        {
+            Console.Clear();
+            Console.WriteLine("Choose number of rounds: ");
+            Rounds = int.Parse(Console.ReadLine());
+        }
     }
 }
 

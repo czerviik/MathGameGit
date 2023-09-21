@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+
 namespace MathGameGit;
 
 class Program
@@ -12,6 +14,7 @@ class Program
         int rounds;
         DateTime actualTime;
         var gamesLog = new List<string>();
+        
 
         while (gameContinue)
         {
@@ -22,35 +25,46 @@ class Program
         {
             var game = new GameTypes();
             string chosenGame;
+            bool menuContinue;
 
-            Console.WriteLine(@"Welcome to the math game! Select your game:
+            do
+            {
+                Console.Clear();
+                menuContinue = false;
+                Console.WriteLine(@"Welcome to the math game! Select your game:
 A - Addition
 S - Subtraction
 M - Multiplication
 D - Division
-H - Games history");
-            chosenGame = Console.ReadLine();
+H - Games history
+Q - Quit");
+                chosenGame = Console.ReadLine();
 
-            switch (chosenGame.ToUpper())
-            {
-                case "A":
-                    game = GameTypes.Addition;
-                    break;
-                case "S":
-                    game = GameTypes.Subtraction;
-                    break;
-                case "M":
-                    game = GameTypes.Multiplication;
-                    break;
-                case "D":
-                    game = GameTypes.Division;
-                    break;
-                case "H":
-                    ShowGameLogs();
-                    break;
-                    
-            }
+                switch (chosenGame.ToUpper())
+                {
+                    case "A":
+                        game = GameTypes.Addition;
+                        break;
+                    case "S":
+                        game = GameTypes.Subtraction;
+                        break;
+                    case "M":
+                        game = GameTypes.Multiplication;
+                        break;
+                    case "D":
+                        game = GameTypes.Division;
+                        break;
+                    case "H":
+                        ShowGameLogs();
+                        menuContinue = true;
+                        break;
+                    case "Q":
+                        Environment.Exit(0);
+                        break;
 
+                }
+            } while (menuContinue);
+            
             GameLogic(game);
         }
         
@@ -59,8 +73,10 @@ H - Games history");
             var oper = "";
             int result = 0;
 
+            Console.Clear();
             Console.WriteLine("How many rounds do you want?");
             rounds = int.Parse(Console.ReadLine());
+            Console.Clear();
 
             for (int i = 0; i < rounds; i++)
             {
@@ -145,12 +161,21 @@ H - Games history");
 
         void ShowGameLogs()
         {
-            foreach (var log in gamesLog)
+            if (gamesLog.Any())
             {
-                Console.WriteLine(log);
+                foreach (var log in gamesLog)
+                {
+                    Console.WriteLine(log);
+                }
             }
+            else
+            {
+                Console.WriteLine("No games played so far.");
+            }
+            
             Console.WriteLine("Press any key to continue...");
             Console.ReadLine();
+
 
         }
 
@@ -174,7 +199,7 @@ H - Games history");
             }
 
             AddGameLogs(gameName);
-
+            Console.Clear();
             Console.WriteLine("Game over! Your score in {0} is {1}",gameName,score);
             Console.WriteLine("Play again? Y/N");
             string playAgain = Console.ReadLine();

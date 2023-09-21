@@ -1,4 +1,6 @@
 ﻿using System;
+using static System.Formats.Asn1.AsnWriter;
+
 namespace MathGameGit
 {
 	public class Question
@@ -82,7 +84,22 @@ namespace MathGameGit
             result = ranNoArray[0] / ranNoArray[1];
             return result;
         }
+        public bool CheckAnswer()
+        {
+            int userAnswer = int.Parse(Console.ReadLine());
+            if (Result == userAnswer)
+            {
+                Console.WriteLine("Correct answer!");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Wrong! Correct answer is {0}", Result);
+                Console.WriteLine();
+            }
 
+            return (Result == userAnswer);
+        }
     }
 }
 

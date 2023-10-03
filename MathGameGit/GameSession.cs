@@ -22,6 +22,7 @@ namespace MathGameGit
             {
                 do
                 {
+                    scoreboard.ResetScore(); 
                     mainMenu.Display();
                     mainMenu.ChooseGame();
                 } while (mainMenu.Repeat);
@@ -30,7 +31,6 @@ namespace MathGameGit
                 mainMenu.ChooseRounds();
                 for (int i = 0; i < scoreboard.Rounds; i++)
                 {
-                    Console.WriteLine("TESTLINE");
 
                     Stopwatch stopwatch = new();
                     stopwatch.Start();
@@ -52,6 +52,7 @@ namespace MathGameGit
 		private void EndGame(int score, GameTypes game)
         {
             string gameName = "";
+            bool isValidInput = false;
             switch (game)
             {
                 case GameTypes.Addition:
@@ -71,16 +72,31 @@ namespace MathGameGit
                     break;
             }
 
-
             GameHistory.Instance.AddGameLog(gameName, score, scoreboard.Rounds, scoreboard.ShowAverageTime());
 
             Console.Clear();
             Console.WriteLine("Game over! Your score in {0} is {1}. Average time for one answer: {2} s.", gameName, score, scoreboard.ShowAverageTime());
-            Console.WriteLine("Play again? Y/");
-            string playAgain = Console.ReadLine();
+            
+            while (!isValidInput)
+            {
+                Console.WriteLine("Play again? Y/N");
+                string playAgain = Console.ReadLine();
 
-            if (playAgain.ToUpper() == "N")
-                gameContinue = false;
+                if (playAgain.ToUpper() == "N")
+                {
+                    gameContinue = false;
+                    isValidInput = true;
+                }
+                else if (playAgain.ToUpper() == "Y")
+                    isValidInput = true;
+                if (!isValidInput)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Wrong input.");
+                }
+                    
+            }
+            
 
         }
 	}

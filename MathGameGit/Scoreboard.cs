@@ -20,6 +20,10 @@ namespace MathGameGit
 			Score++;
 		}
 
+		public void ResetScore()
+		{
+			Score = 0;
+		}
 
 		public void AddTime(double timeSpan)
 		{

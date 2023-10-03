@@ -93,8 +93,7 @@ namespace MathGameGit
                     break;
             }
 
-            Console.Clear();
-            Console.WriteLine($"{ranNoArray[0]} {oper} {ranNoArray[1]}");
+            Console.WriteLine($"{ranNoArray[0]} {oper} {ranNoArray[1]} = ");
         }
 
         private int DivisionSpecialCalc(int[] ranNoArray)
@@ -112,18 +111,17 @@ namespace MathGameGit
         public bool CheckAnswer()
         {
             int userAnswer = int.Parse(Console.ReadLine());
+            Console.WriteLine();
             if (Result == userAnswer)
             {
                 scoreboard.ScoreUp();
                 Console.WriteLine("Correct answer!");
-                Console.WriteLine();
             }
             else
             {
                 Console.WriteLine("Wrong! Correct answer is {0}", Result);
-                Console.WriteLine();
             }
-
+            Console.WriteLine();
             return (Result == userAnswer);
         }
     }

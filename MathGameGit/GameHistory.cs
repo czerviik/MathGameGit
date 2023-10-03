@@ -45,7 +45,7 @@ Average time for one answer: {averageTime} s");
             }
 
             Console.WriteLine("Press any key to continue...");
-            Console.ReadLine();
+            Console.ReadKey();
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{2636A93C-F0B1-4FAD-9B6A-219EA3025556}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MathGameGit/GameSession.cs">
+    <Files>
+      <File FileName="MathGameGit/Program.cs" />
+      <File FileName="MathGameGit/GameSession.cs" Line="27" Column="1" />
+      <File FileName="MathGameGit/Scoreboard.cs" NotebookId="1" />
+      <File FileName="MathGameGit/GameHistory.cs" NotebookId="1" />
+      <File FileName="MathGameGit/MainMenu.cs" Line="76" Column="10" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MathGameGit" expanded="True">
+            <Node name="MathGameGit" expanded="True">
+              <Node name="GameSession.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MathGameGit PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

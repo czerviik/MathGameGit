@@ -1,23 +1,24 @@
 ﻿using System;
-namespace MathGameGit
+
+namespace MathGameGit;
+
+public class MainMenu
 {
-	public class MainMenu
+	public GameTypes Game { get; private set; }
+    public bool Repeat { get; private set; }
+    public int Difficulty { get; private set; }
+    private Scoreboard scoreboard;
+
+    public MainMenu(Scoreboard scoreboard)
 	{
-		public GameTypes Game { get; private set; }
-        public bool Repeat { get; private set; }
-        public int Difficulty { get; private set; }
-        private Scoreboard scoreboard;
+		Game = new GameTypes();
+        this.scoreboard = scoreboard;
+	}
 
-        public MainMenu(Scoreboard scoreboard)
-		{
-			Game = new GameTypes();
-            this.scoreboard = scoreboard;
-		}
-
-		public void Display()
-		{
-            Console.Clear();
-            Console.WriteLine(@"Welcome to the math game! Select your game:
+	public void Display()
+	{
+        Console.Clear();
+        Console.WriteLine(@"Welcome to the math game! Select your game:
 A - Addition
 S - Subtraction
 M - Multiplication
@@ -25,9 +26,9 @@ D - Division
 R - Random
 H - Games history
 Q - Quit");
-        }
+    }
 
-        public void ChooseGame()
+    public void ChooseGame()
 		{
 			string chosenGame = Console.ReadLine();
             Repeat = false;
@@ -62,78 +63,66 @@ Q - Quit");
                     Console.ReadKey();
                     Repeat = true;
                     break;
+            }     
+    }
+    public void ChooseDifficulty()
+    {
+        bool isValidInput = false;
+        int tempDifficulty;
 
-            }
-            
-        }
-        public void ChooseDifficulty()
+        do
         {
-            
-            bool isValidInput = false;
-            int tempDifficulty;
-
-            do
-            {
-                Console.Clear();
-                Console.WriteLine(@"Choose a difficulty:
+            Console.Clear();
+            Console.WriteLine(@"Choose a difficulty:
 1 - easy
 2 - medium
 3 - hard");
-                string input = Console.ReadLine();
-                if (int.TryParse(input, out tempDifficulty))
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out tempDifficulty))
+            {
+                if (tempDifficulty < 4 && tempDifficulty > 1)
                 {
-                    if (tempDifficulty < 4 && tempDifficulty > 1)
-                    {
-                        Difficulty = tempDifficulty;
-                        isValidInput = true;
-                    }
-                    else
-                    {
-                        ErrorMessage("difficulty");
-                    }
+                    Difficulty = tempDifficulty;
+                    isValidInput = true;
                 }
                 else
-                {
                     ErrorMessage("difficulty");
-                }
-            } while (!isValidInput);
-        }
+            }
+            else
+                ErrorMessage("difficulty");
+        } while (!isValidInput);
+    }
 
-        public void ChooseRounds()
+    public void ChooseRounds()
+    {
+        bool isValidInput = false;
+        int tempRounds;
+
+        do
         {
-            bool isValidInput = false;
-            int tempRounds;
-
-            do
+            Console.Clear();
+            Console.WriteLine("Choose number of rounds: ");
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out tempRounds))
             {
-                Console.Clear();
-                Console.WriteLine("Choose number of rounds: ");
-                string input = Console.ReadLine();
-                if (int.TryParse(input, out tempRounds))
+                if (tempRounds > 0 && tempRounds < 256)
                 {
-                    if (tempRounds > 0 && tempRounds < 256)
-                    {
-                        scoreboard.Rounds = tempRounds;
-                        isValidInput = true;
-                    }
-                    else
-                        ErrorMessage("number of rounds");
-
+                    scoreboard.Rounds = tempRounds;
+                    isValidInput = true;
                 }
                 else
                     ErrorMessage("number of rounds");
+            }
+            else
+                ErrorMessage("number of rounds");
+        } while (!isValidInput);
+        Console.Clear();
 
-            } while (!isValidInput);
-
-            Console.Clear();
-
-        }
-        private void ErrorMessage(string type)
-        {
-            Console.WriteLine("You didn't enter a valid {0}!",type);
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey();
-        }
+    }
+    private void ErrorMessage(string type)
+    {
+        Console.WriteLine("You didn't enter a valid {0}!",type);
+        Console.WriteLine("Press any key to continue...");
+        Console.ReadKey();
     }
 }
-

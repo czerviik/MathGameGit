@@ -10,10 +10,9 @@ class Program
     {
         GameSession gameSession = new();
         gameSession.Start();
-    }
-
-    
+    } 
 }
+
 public enum GameTypes
 {
     Addition,
@@ -22,4 +21,3 @@ public enum GameTypes
     Division,
     Random
 }
-

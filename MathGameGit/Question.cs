@@ -24,24 +24,22 @@ namespace MathGameGit
 
 		private int[] RandomNumbersArray()
         {
-            int number1 = 0;
-            int number2 = 0;
+            int number1;
+            int number2;
+            int highestNumber = 0;
+
             if (Difficulty == 1)
-            {
-                number1 = random.Next(1, 50);
-                number2 = random.Next(1, 50);
-            }
-            else if(Difficulty == 2)
-            {
-                number1 = random.Next(1, 100);
-                number2 = random.Next(1, 100);
-            }
-            else if(Difficulty == 3)
-            {
-                number1 = random.Next(1, 1000);
-                number2 = random.Next(1, 1000);
-            }
-            
+                highestNumber = 50;
+
+            else if (Difficulty == 2)
+                highestNumber = 100;
+
+            else if (Difficulty == 3)
+                highestNumber = 1000;
+
+            number1 = random.Next(1, highestNumber);
+            number2 = random.Next(1, highestNumber);
+
             ranNoArray[0] = number1;
             ranNoArray[1] = number2;
             return ranNoArray;
@@ -69,7 +67,7 @@ namespace MathGameGit
                     Result = DivisionSpecialCalc(ranNoArray);
                     break;
                 case GameTypes.Random:
-                    int randomType = random.Next(1, 4);
+                    int randomType = random.Next(1, 5);
                     switch (randomType)
                     {
                         case 1:
@@ -110,8 +108,26 @@ namespace MathGameGit
         }
         public bool CheckAnswer()
         {
-            int userAnswer = int.Parse(Console.ReadLine());
+            bool isValidInput = false;
+            int userAnswer;
+
+            do
+            {
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out userAnswer))
+                    isValidInput = true;
+                else
+                {
+                    Console.WriteLine("You didn't enter a number.");
+                    Console.WriteLine("Press any key to continue...");
+                    Console.ReadKey();
+                    Console.Clear();
+                    Display(GameType);
+                }
+            } while (!isValidInput);
+            
             Console.WriteLine();
+
             if (Result == userAnswer)
             {
                 scoreboard.ScoreUp();
@@ -121,6 +137,7 @@ namespace MathGameGit
             {
                 Console.WriteLine("Wrong! Correct answer is {0}", Result);
             }
+
             Console.WriteLine();
             return (Result == userAnswer);
         }

@@ -1,18 +1,18 @@
 ﻿<Properties StartupConfiguration="{2636A93C-F0B1-4FAD-9B6A-219EA3025556}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="MathGameGit/GameSession.cs">
     <Files>
-      <File FileName="MathGameGit/Program.cs" />
-      <File FileName="MathGameGit/GameSession.cs" Line="27" Column="1" />
-      <File FileName="MathGameGit/Scoreboard.cs" NotebookId="1" />
-      <File FileName="MathGameGit/GameHistory.cs" NotebookId="1" />
-      <File FileName="MathGameGit/MainMenu.cs" Line="76" Column="10" NotebookId="1" />
+      <File FileName="MathGameGit/Program.cs" Line="25" Column="1" />
+      <File FileName="MathGameGit/GameSession.cs" Line="23" Column="19" />
+      <File FileName="MathGameGit/GameHistory.cs" Line="23" Column="37" />
+      <File FileName="MathGameGit/Scoreboard.cs" Line="20" Column="12" NotebookId="1" />
+      <File FileName="MathGameGit/MainMenu.cs" Line="20" Column="37" NotebookId="1" />
+      <File FileName="MathGameGit/Question.cs" Line="38" Column="25" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="MathGameGit" expanded="True">
-            <Node name="MathGameGit" expanded="True">
+          <Node name="MathGameGit">
+            <Node name="MathGameGit">
               <Node name="GameSession.cs" selected="True" />
             </Node>
           </Node>
@@ -20,9 +20,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.MathGameGit PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

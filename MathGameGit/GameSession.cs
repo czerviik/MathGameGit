@@ -76,8 +76,7 @@ namespace MathGameGit
 
             Console.Clear();
             Console.WriteLine("Game over! Your score in {0} is {1}. Average time for one answer: {2} s.", gameName, score, scoreboard.ShowAverageTime());
-            
-            while (!isValidInput)
+            do
             {
                 Console.WriteLine("Play again? Y/N");
                 string playAgain = Console.ReadLine();
@@ -94,9 +93,8 @@ namespace MathGameGit
                     Console.Clear();
                     Console.WriteLine("Wrong input.");
                 }
-                    
-            }
-            
+            } while (!isValidInput);
+
 
         }
 	}
